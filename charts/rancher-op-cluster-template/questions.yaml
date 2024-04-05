@@ -1,0 +1,22 @@
+questions:
+- variable: cluster.name
+  description: "Specify the name of the cluster"
+  label: "Cluster Name"
+  required: true
+  group: "General"
+- variable: nodepool.size
+  label: "VM Size"
+  type: enum
+  options:
+    - small
+    - medium
+    - large
+    - huge
+  description: "Size of each VM"
+  group: "Nodepools"
+- variable: nodepool.count
+  description: "Specify node count"
+  type: int
+  required: true
+  label: "Node count"
+  group: "Nodepools"

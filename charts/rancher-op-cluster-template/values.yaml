@@ -1,0 +1,8 @@
+cluster:
+  name: bdapp-cluster
+
+cloudCredentialSecretName: ""
+
+nodepool:
+  sizes:
+  count: 1

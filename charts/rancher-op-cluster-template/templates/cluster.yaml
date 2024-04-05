@@ -1,0 +1,19 @@
+apiVersion: provisioning.cattle.io/v1
+kind: Cluster
+metadata:
+  name: {{ .Values.cluster.name }}
+  namespace: fleet-default
+spec:
+  kubernetesVersion: v1.27.11+rke2r1
+    rkeConfig:
+      machinePools:
+      - controlPlaneRole: true
+        etcdRole: true
+        workerRole: true
+        quantity: {{ .Values.nodepool.count }}
+        name: {{ .Values.container.name }}-nodes
+        machineConfigRef:
+        paused: false
+        displayName: {{ .Values.cluster.name }}-nodes
+      controlPlaneConfig:
+        cni: calico
